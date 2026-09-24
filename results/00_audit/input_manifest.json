@@ -1,0 +1,79 @@
+{
+  "schema_version": "1.0",
+  "generated_at_utc": "2026-09-24T00:12:00.519760+00:00",
+  "files": [
+    {
+      "key": "problem_document",
+      "path": "山区洪涝灾害下无人机运输与通信协同优化.docx",
+      "bytes": 3221372,
+      "sha256": "d3d4e645412bc78231e570914e304dbccb40e61d5fc64f9fda3abce44d53ece0"
+    },
+    {
+      "key": "submission_template",
+      "path": "结果提交模板.xlsx",
+      "bytes": 20893,
+      "sha256": "16f521f29a7103c4ff7c3709ce1696bb9fffa18ce741895e45b7bc7afaf3320a"
+    },
+    {
+      "key": "development_spec",
+      "path": "D题_Codex可执行开发规范.md",
+      "bytes": 35557,
+      "sha256": "e1af17a5bf399dcf247e64c81c1d267e160bd527edc556df8f7cd156dacd2a92"
+    },
+    {
+      "key": "nodes_workbook",
+      "path": "数据/无人机应急物资运输基础数据/调度中心与服务区.xlsx",
+      "bytes": 11017,
+      "sha256": "541a7af1ded08c9a3ff448480332cb5f6a54902f0afa6e9bcd50c1d2b2b34e38"
+    },
+    {
+      "key": "demand_workbook",
+      "path": "数据/无人机应急物资运输基础数据/物资需求与配送时限.xlsx",
+      "bytes": 17474,
+      "sha256": "5a3346159ceddcf585859d270b8f62114b388a1f737fbe64ffde0ee1fdc8170a"
+    },
+    {
+      "key": "transport_workbook",
+      "path": "数据/无人机应急物资运输基础数据/运输无人机数据.xlsx",
+      "bytes": 11746,
+      "sha256": "9296a657c07e042afba6aeea7999665d9cd24e00b592fd6c269de6e338480dcb"
+    },
+    {
+      "key": "relay_workbook",
+      "path": "数据/无人机应急物资运输基础数据/中继无人机数据.xlsx",
+      "bytes": 11082,
+      "sha256": "be52643ff29419233e6a141dca03a04160a8af551cab36d8c49b51bb836bea04"
+    },
+    {
+      "key": "communication_workbook",
+      "path": "数据/无人机应急物资运输基础数据/通信链路参数.xlsx",
+      "bytes": 10485,
+      "sha256": "1860d153199e7ae460ba36e83b673374e640e19de91ea167f2877271001f5f81"
+    },
+    {
+      "key": "dem_tif",
+      "path": "数据/镇龙乡地理空间数据/镇龙乡及周边地理数据/数字高程模型数据（DEM）/镇龙乡及周边30米DEM.tif",
+      "bytes": 7867096,
+      "sha256": "741fe6de0b2bcaffd0f4007f574ee698d46197094f52cc954b532c4f90fc7c03"
+    },
+    {
+      "key": "dem_mat",
+      "path": "数据/镇龙乡地理空间数据/镇龙乡及周边地理数据/数字高程模型数据（DEM）/镇龙乡及周边30米DEM.mat",
+      "bytes": 6746494,
+      "sha256": "c68703e0cc8f94f4bd52ff6e9974b66a2dae33865f0723ad71c04b6694bf4fbf"
+    },
+    {
+      "key": "geo_description",
+      "path": "数据/镇龙乡地理空间数据/镇龙乡地理空间数据说明.pdf",
+      "bytes": 85812,
+      "sha256": "6d1522c6832a5d91a108dae0d07954845025c0dabd44af8ee78c7860d7c405e4"
+    },
+    {
+      "key": "geo_map",
+      "path": "数据/镇龙乡地理空间数据/镇龙乡地理空间详情地图.html",
+      "bytes": 4701273,
+      "sha256": "5bb8082f4f5913e6787f86fa9dd3b6f8cbcfa309359f222f57355d1ae991b452"
+    }
+  ],
+  "manifest_sha256": "2cdea5776417f69c09831117741b7d14d6756156bf94072ea169210749cbf28b"
+}

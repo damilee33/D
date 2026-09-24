@@ -1,0 +1,73 @@
+{
+  "schema_version": "1.0",
+  "status": "PASS",
+  "counts": {
+    "dispatch_centers": 1,
+    "service_areas": 15,
+    "demand_summary_rows": 53,
+    "cargo_boxes": 80,
+    "first_batch_boxes": 30,
+    "transport_drones": 8,
+    "relay_drones": 2,
+    "communication_parameters": 14
+  },
+  "cargo": {
+    "total_mass_kg": 758,
+    "total_volume_m3": 2.0109999999999992,
+    "counts_by_material": {
+      "医疗物资": 16,
+      "饮用水": 36,
+      "应急食品": 19,
+      "生活卫生用品": 9
+    }
+  },
+  "transport_resources": {
+    "drones_by_type": {
+      "A": 4,
+      "B": 2,
+      "C": 2
+    },
+    "batteries_by_type": {
+      "A": 6,
+      "B": 4,
+      "C": 4
+    }
+  },
+  "relay_resources": {
+    "drones": 2,
+    "energy_modules": 6
+  },
+  "dem": {
+    "width": 1486,
+    "height": 1309,
+    "dtype": "float32",
+    "minimum_m": 41.68907928466797,
+    "maximum_m": 1132.8560791015625,
+    "nodata_value": null,
+    "nodata_pixel_count": 0,
+    "pixel_scale": [
+      0.00027777777777777393,
+      0.0002777777777777777,
+      0.0
+    ],
+    "tiepoint": [
+      0.0,
+      0.0,
+      0.0,
+      109.03277777777778,
+      23.224722222222223,
+      0.0
+    ],
+    "epsg": 4326
+  },
+  "model_contract": {
+    "energy_model_version": "provisional_v0",
+    "energy_config_sha256": "7385163e2ba7aa529fda003a8558b715a63a5b50e3ab4cf3d799c34744d0a401",
+    "q1_work_time_version": "answerer_defined_v1",
+    "q1_work_time_status": "answerer_defined"
+  },
+  "runtime": {
+    "python": "3.8.5",
+    "platform": "Windows-10-10.0.26100-SP0"
+  }
+}

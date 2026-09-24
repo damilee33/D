@@ -1,0 +1,56 @@
+{
+  "status": "PASS",
+  "purpose": "P1 structural smoke test; not a Q1 final solution",
+  "service_id": "S001",
+  "drone_type": "A",
+  "cargo_id": "S001-WAT-01",
+  "payload_kg": 14,
+  "payload_volume_m3": 0.027,
+  "profile": {
+    "horizontal_distance_m": 3053.978849873493,
+    "maximum_ground_elevation_m": 223.05661010742188,
+    "cruise_altitude_m": 273.0566101074219,
+    "origin_work_altitude_m": 127.7,
+    "destination_work_altitude_m": 184.0,
+    "forward_climb_m": 145.3566101074219,
+    "forward_descent_m": 89.05661010742188,
+    "reverse_climb_m": 89.05661010742188,
+    "reverse_descent_m": 145.3566101074219
+  },
+  "outbound_energy": {
+    "energy_model_version": "provisional_v0",
+    "horizontal_kwh": 0.600004440421036,
+    "climb_kwh": 0.04619550834985945,
+    "total_kwh": 0.6461999487708954
+  },
+  "return_energy": {
+    "energy_model_version": "provisional_v0",
+    "horizontal_kwh": 0.5497161929772287,
+    "climb_kwh": 0.023585760179666824,
+    "total_kwh": 0.5733019531568956
+  },
+  "total_energy_kwh": 1.2195019019277908,
+  "energy_limit_kwh": 3.6,
+  "remaining_soc_fraction": 0.7289995773493798,
+  "round_trip_flight_seconds": 680.8995031364676,
+  "q1_work_time_seconds": 1190.8995031364675,
+  "q1_work_time_definition": "answerer_defined_v1",
+  "energy_config_sha256": "7385163e2ba7aa529fda003a8558b715a63a5b50e3ab4cf3d799c34744d0a401",
+  "constraints": {
+    "mass_capacity": {
+      "lhs_kg": 14,
+      "rhs_kg": 25,
+      "pass": true
+    },
+    "volume_capacity": {
+      "lhs_m3": 0.027,
+      "rhs_m3": 0.06,
+      "pass": true
+    },
+    "energy_with_return_reserve": {
+      "lhs_kwh": 1.2195019019277908,
+      "rhs_kwh": 3.6,
+      "pass": true
+    }
+  }
+}

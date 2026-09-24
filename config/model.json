@@ -1,0 +1,40 @@
+{
+  "energy_model": {
+    "version": "provisional_v0",
+    "status": "answerer_defined_pending_official_definition",
+    "gravity_m_s2": 9.80665,
+    "equivalent_range_exponent": 1.5,
+    "horizontal_energy_formula": "distance_m / equivalent_range_m(payload_kg) * usable_energy_kwh",
+    "climb_energy_formula": "(empty_mass_kg + payload_kg) * gravity_m_s2 * positive_height_gain_m / (climb_efficiency * 3.6e6)",
+    "descent_additional_energy_kwh": 0.0,
+    "official_update_invalidation_scope": [
+      "cache",
+      "Q1",
+      "Q2",
+      "Q3",
+      "Q4"
+    ]
+  },
+  "q1_cumulative_work_time": {
+    "version": "answerer_defined_v1",
+    "status": "answerer_defined",
+    "definition": "sum_over_trips(preparation + per_box_loading + round_trip_flight + base_handover + per_box_handover)",
+    "parallel_makespan": false,
+    "turnaround_time_included": false,
+    "parameter_source": "运输无人机数据.xlsx/数据",
+    "source_columns": {
+      "preparation_seconds": "工位固定准备时间（s）",
+      "per_box_loading_seconds": "每箱装载时间（s）",
+      "base_handover_seconds": "接收点基础交接时间（s）",
+      "per_box_handover_seconds": "每箱增加交接时间（s）"
+    }
+  },
+  "transport_timeline": {
+    "version": "answerer_defined_v1",
+    "transport_turnaround_seconds": 0.0,
+    "turnaround_status": "explicit_zero_because_transport_attachment_has_no_turnaround_parameter",
+    "battery_task_interval": "trip_start_through_return_to_O01",
+    "drone_task_interval": "trip_start_through_return_to_O01",
+    "delivery_completion": "end_of_service_handover"
+  }
+}

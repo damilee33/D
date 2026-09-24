@@ -1,0 +1,30 @@
+{
+  "status": "FAIL",
+  "solution_version": "S2-baseline-v1.0.0-provisional_v0",
+  "parent_version": "S1-v1.0.0-provisional_v0",
+  "generated_at_utc": "2026-09-24T01:58:01.596703+00:00",
+  "deterministic": true,
+  "random_seed": null,
+  "input_manifest_sha256": "2cdea5776417f69c09831117741b7d14d6756156bf94072ea169210749cbf28b",
+  "model_config_sha256": "47657c24879cb0a9b2e84704bff21513ba2329759f04ed5c098c908d83b01096",
+  "parent_q1_summary_sha256": "86e3ea1ce02f5452f9d0d9ca46f0b00eed9589bd1e752ea8a03d1e45b787b8d0",
+  "solver": "q1_batches_single_service_edf_greedy_drone_battery_schedule",
+  "trip_count": 18,
+  "total_energy_kwh": 59.11903528961918,
+  "transport_makespan_seconds": 10357.222275849435,
+  "timeliness_loss_weighted_seconds": 195863.63169296164,
+  "hard_deadline_violations": [
+    {
+      "货箱编号": "S014-MED-01",
+      "交付时刻（s）": 4286.826841255156,
+      "硬截止（s）": 3600.0
+    },
+    {
+      "货箱编号": "S014-WAT-01",
+      "交付时刻（s）": 4286.826841255156,
+      "硬截止（s）": 3600.0
+    }
+  ],
+  "cargo_boxes": 80,
+  "transport_turnaround_seconds": 0.0
+}

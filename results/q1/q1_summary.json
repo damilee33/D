@@ -1,0 +1,43 @@
+{
+  "status": "PASS",
+  "solution_version": "S1-v1.0.0-provisional_v0",
+  "parent_version": "P1-common-physics-v1",
+  "generated_at_utc": "2026-09-24T01:54:08.357404+00:00",
+  "deterministic": true,
+  "random_seed": null,
+  "input_manifest_sha256": "2cdea5776417f69c09831117741b7d14d6756156bf94072ea169210749cbf28b",
+  "model_config_sha256": "47657c24879cb0a9b2e84704bff21513ba2329759f04ed5c098c908d83b01096",
+  "solver": "ffd_seeded_pair_triple_local_search_with_exact_certificate",
+  "energy_model_version": "provisional_v0",
+  "energy_config_sha256": "7385163e2ba7aa529fda003a8558b715a63a5b50e3ab4cf3d799c34744d0a401",
+  "q1_work_time_version": "answerer_defined_v1",
+  "baseline_trip_count": 18,
+  "baseline_total_energy_kwh": 59.529769308030836,
+  "baseline_cumulative_work_seconds": 32758.430315307625,
+  "main_trip_count": 18,
+  "main_total_energy_kwh": 59.11903528961919,
+  "main_cumulative_work_seconds": 32746.430315307625,
+  "exact_certificate_total_energy_kwh": 59.11903528961919,
+  "exact_certificate_cumulative_work_seconds": 32746.430315307625,
+  "exact_certificate_trip_count": 18,
+  "local_search_trip_count_gap": 0,
+  "local_search_iterations": 2,
+  "local_search_operator_counts": {
+    "type_replacement": 0,
+    "pair_repartition": 2,
+    "triple_repartition": 0
+  },
+  "global_pareto_points": 1,
+  "baseline_constraint_audit": {
+    "status": "PASS",
+    "violations": 0,
+    "cargo_boxes": 80,
+    "trips": 18
+  },
+  "main_constraint_audit": {
+    "status": "PASS",
+    "violations": 0,
+    "cargo_boxes": 80,
+    "trips": 18
+  }
+}

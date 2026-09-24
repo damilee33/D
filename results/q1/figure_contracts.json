@@ -1,0 +1,223 @@
+{
+  "style": {
+    "journal": "general",
+    "lang": "zh",
+    "sciplots_used": false,
+    "cjk_font": "SimSun",
+    "constrained_layout": true
+  },
+  "visual_review": {
+    "rounds": 2,
+    "status": "PASS",
+    "checks": [
+      "中文与符号无缺字",
+      "标题、坐标轴、刻度和数值标注未裁切或重叠",
+      "图例未遮挡数据",
+      "灰度预览仍可借助纹理或数值标注辨识",
+      "热力图改为真正矢量网格，SVG不含base64位图"
+    ],
+    "known_gap": "check_figure默认运行时未装pypdf；已另用bundled runtime/pypdf确认PDF使用嵌入式Type0/CIDFontType2字体且无Type3字体"
+  },
+  "figures": [
+    {
+      "id": "raw_q1_demand_structure",
+      "core_claim": "15个服务区的需求规模与物资构成差异显著，组批必须逐区处理。",
+      "evidence": "逐箱清单按服务区和物资类型汇总的质量，不含推断值。",
+      "chart": "按总质量排序的水平堆叠柱状图",
+      "backend": "Python/matplotlib"
+    },
+    {
+      "id": "raw_q1_box_mass_volume",
+      "core_claim": "货箱不可拆分且不同物资的质量—体积组合差异明显，组批必须同时检查重量与体积。",
+      "evidence": "80个原始货箱的单箱质量和单箱体积。",
+      "chart": "按物资类型编码的质量—体积散点图",
+      "backend": "Python/matplotlib"
+    },
+    {
+      "id": "raw_q1_route_geometry",
+      "core_claim": "15条单点往返航线的水平距离和DEM爬升负担存在明显差异。",
+      "evidence": "节点经纬度与30米DEM严格超覆盖剖面。",
+      "chart": "共享服务区顺序的双面板水平柱状图",
+      "backend": "Python/matplotlib"
+    },
+    {
+      "id": "process_q1_safe_payload",
+      "core_claim": "在20%返航余量下，部分远端航线的安全载荷受能量而非额定载荷限制。",
+      "evidence": "15×3最大安全载荷矩阵除以对应机型额定载荷。",
+      "chart": "单向viridis热力图",
+      "backend": "Python/matplotlib"
+    },
+    {
+      "id": "process_q1_reserve_sensitivity",
+      "core_claim": "返航余量从10%提高到30%时，各机型安全载荷不出现系统性上升。",
+      "evidence": "15个服务区、3类机型、5档返航余量的最大安全载荷。",
+      "chart": "中位数折线与服务区最小—最大范围带",
+      "backend": "Python/matplotlib"
+    },
+    {
+      "id": "process_q1_neighborhood_gain",
+      "core_claim": "局部搜索的收益来自少数服务区的双批重组，未靠减少配送覆盖获得。",
+      "evidence": "逐服务区FFD基线与主方案的能耗、累计作业时间差。",
+      "chart": "逐服务区双面板改进贡献柱状图",
+      "backend": "Python/matplotlib"
+    },
+    {
+      "id": "result_q1_plan_comparison",
+      "core_claim": "在保持最少架次数不变的前提下，局部搜索主方案降低总能耗并缩短累计作业时间。",
+      "evidence": "FFD baseline 与主方案的确定性总量对比；非均值、无统计误差棒。",
+      "chart": "从零起轴的三面板确定性总量水平柱状图，并直接标注精确值与相对变化",
+      "backend": "Python/matplotlib"
+    },
+    {
+      "id": "result_q1_constraint_margins",
+      "core_claim": "主方案18个架次的质量、体积和返航SOC均满足硬约束。",
+      "evidence": "逐架次质量/体积利用率与相对机型阈值的返航SOC裕量。",
+      "chart": "按机型编码的三面板约束裕量散点图",
+      "backend": "Python/matplotlib"
+    },
+    {
+      "id": "result_q1_service_plan",
+      "core_claim": "主方案逐服务区明确给出机型与架次数配置，且不跨区组批。",
+      "evidence": "main_trips.csv中的18个已审计架次。",
+      "chart": "逐服务区机型堆叠水平柱状图",
+      "backend": "Python/matplotlib"
+    }
+  ],
+  "qa": [
+    {
+      "basename": "D:\\D\\figures\\raw_q1_demand_structure",
+      "verdict": "WARN",
+      "issues": [
+        [
+          "WARN",
+          "以下文字可能超出画布被裁切：['需求质量（kg）', '服务区']。跑 finalize_figure(fig) 或导出时 bbox_inches='tight' 兜底；标题/标签过长可换行或缩短。"
+        ]
+      ],
+      "outputs": [
+        "D:\\D\\figures\\raw_q1_demand_structure.pdf",
+        "D:\\D\\figures\\raw_q1_demand_structure.svg",
+        "D:\\D\\figures\\raw_q1_demand_structure.png"
+      ]
+    },
+    {
+      "basename": "D:\\D\\figures\\raw_q1_box_mass_volume",
+      "verdict": "WARN",
+      "issues": [
+        [
+          "WARN",
+          "以下文字可能超出画布被裁切：['单箱质量（kg）', '单箱体积（L）']。跑 finalize_figure(fig) 或导出时 bbox_inches='tight' 兜底；标题/标签过长可换行或缩短。"
+        ]
+      ],
+      "outputs": [
+        "D:\\D\\figures\\raw_q1_box_mass_volume.pdf",
+        "D:\\D\\figures\\raw_q1_box_mass_volume.svg",
+        "D:\\D\\figures\\raw_q1_box_mass_volume.png"
+      ]
+    },
+    {
+      "basename": "D:\\D\\figures\\raw_q1_route_geometry",
+      "verdict": "WARN",
+      "issues": [
+        [
+          "WARN",
+          "以下文字可能超出画布被裁切：['服务区（按距离排序）']。跑 finalize_figure(fig) 或导出时 bbox_inches='tight' 兜底；标题/标签过长可换行或缩短。"
+        ]
+      ],
+      "outputs": [
+        "D:\\D\\figures\\raw_q1_route_geometry.pdf",
+        "D:\\D\\figures\\raw_q1_route_geometry.svg",
+        "D:\\D\\figures\\raw_q1_route_geometry.png"
+      ]
+    },
+    {
+      "basename": "D:\\D\\figures\\process_q1_safe_payload",
+      "verdict": "WARN",
+      "issues": [
+        [
+          "WARN",
+          "以下文字可能超出画布被裁切：['运输无人机机型', '服务区']。跑 finalize_figure(fig) 或导出时 bbox_inches='tight' 兜底；标题/标签过长可换行或缩短。"
+        ]
+      ],
+      "outputs": [
+        "D:\\D\\figures\\process_q1_safe_payload.pdf",
+        "D:\\D\\figures\\process_q1_safe_payload.svg",
+        "D:\\D\\figures\\process_q1_safe_payload.png"
+      ]
+    },
+    {
+      "basename": "D:\\D\\figures\\process_q1_reserve_sensitivity",
+      "verdict": "WARN",
+      "issues": [
+        [
+          "WARN",
+          "以下文字可能超出画布被裁切：['最大安全载荷（kg）']。跑 finalize_figure(fig) 或导出时 bbox_inches='tight' 兜底；标题/标签过长可换行或缩短。"
+        ]
+      ],
+      "outputs": [
+        "D:\\D\\figures\\process_q1_reserve_sensitivity.pdf",
+        "D:\\D\\figures\\process_q1_reserve_sensitivity.svg",
+        "D:\\D\\figures\\process_q1_reserve_sensitivity.png"
+      ]
+    },
+    {
+      "basename": "D:\\D\\figures\\process_q1_neighborhood_gain",
+      "verdict": "WARN",
+      "issues": [
+        [
+          "WARN",
+          "以下文字可能超出画布被裁切：['节省能耗（kWh）', '服务区']。跑 finalize_figure(fig) 或导出时 bbox_inches='tight' 兜底；标题/标签过长可换行或缩短。"
+        ]
+      ],
+      "outputs": [
+        "D:\\D\\figures\\process_q1_neighborhood_gain.pdf",
+        "D:\\D\\figures\\process_q1_neighborhood_gain.svg",
+        "D:\\D\\figures\\process_q1_neighborhood_gain.png"
+      ]
+    },
+    {
+      "basename": "D:\\D\\figures\\result_q1_plan_comparison",
+      "verdict": "WARN",
+      "issues": [
+        [
+          "WARN",
+          "以下文字可能超出画布被裁切：['次']。跑 finalize_figure(fig) 或导出时 bbox_inches='tight' 兜底；标题/标签过长可换行或缩短。"
+        ]
+      ],
+      "outputs": [
+        "D:\\D\\figures\\result_q1_plan_comparison.pdf",
+        "D:\\D\\figures\\result_q1_plan_comparison.svg",
+        "D:\\D\\figures\\result_q1_plan_comparison.png"
+      ]
+    },
+    {
+      "basename": "D:\\D\\figures\\result_q1_constraint_margins",
+      "verdict": "WARN",
+      "issues": [
+        [
+          "WARN",
+          "以下文字可能超出画布被裁切：['质量利用率（%）', '体积利用率（%）', '主方案架次序号']。跑 finalize_figure(fig) 或导出时 bbox_inches='tight' 兜底；标题/标签过长可换行或缩短。"
+        ]
+      ],
+      "outputs": [
+        "D:\\D\\figures\\result_q1_constraint_margins.pdf",
+        "D:\\D\\figures\\result_q1_constraint_margins.svg",
+        "D:\\D\\figures\\result_q1_constraint_margins.png"
+      ]
+    },
+    {
+      "basename": "D:\\D\\figures\\result_q1_service_plan",
+      "verdict": "WARN",
+      "issues": [
+        [
+          "WARN",
+          "以下文字可能超出画布被裁切：['架次数', '服务区']。跑 finalize_figure(fig) 或导出时 bbox_inches='tight' 兜底；标题/标签过长可换行或缩短。"
+        ]
+      ],
+      "outputs": [
+        "D:\\D\\figures\\result_q1_service_plan.pdf",
+        "D:\\D\\figures\\result_q1_service_plan.svg",
+        "D:\\D\\figures\\result_q1_service_plan.png"
+      ]
+    }
+  ]
+}

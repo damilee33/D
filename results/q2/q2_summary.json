@@ -1,0 +1,152 @@
+{
+  "status": "PASS",
+  "solution_version": "S2-v1.0.0-provisional_v0",
+  "parent_version": "S1-v1.0.0-provisional_v0",
+  "generated_at_utc": "2026-09-24T02:14:08.799429+00:00",
+  "input_manifest_sha256": "2cdea5776417f69c09831117741b7d14d6756156bf94072ea169210749cbf28b",
+  "model_config_sha256": "47657c24879cb0a9b2e84704bff21513ba2329759f04ed5c098c908d83b01096",
+  "parent_s1_freeze_sha256": "f783024fe18624d652de097a110ccad608d7f3fbd668116a9d30e872aa0c3b10",
+  "energy_model_version": "provisional_v0",
+  "transport_timeline_version": "answerer_defined_v1",
+  "solver": "urgency_repair_plus_multiseed_alns_plus_exact_pair_merge_descent",
+  "seeds": [
+    20260924,
+    20260925,
+    20260926,
+    20260927,
+    20260928
+  ],
+  "iterations_per_seed": 2000,
+  "selected_seed": 20260925,
+  "pareto_seed_count": 3,
+  "pareto_seeds": [
+    20260925,
+    20260927,
+    20260926
+  ],
+  "initial_metrics": {
+    "timeliness_loss_weighted_seconds": 537639.120723311,
+    "transport_makespan_seconds": 10730.636718789383,
+    "total_energy_kwh": 61.2891364567802,
+    "trip_count": 18
+  },
+  "main_metrics": {
+    "timeliness_loss_weighted_seconds": 73062.00919624596,
+    "transport_makespan_seconds": 8969.833443696296,
+    "total_energy_kwh": 59.55623486156602,
+    "trip_count": 18,
+    "multi_stop_trip_count": 0
+  },
+  "baseline_status": "FAIL",
+  "baseline_hard_deadline_violations": [
+    {
+      "货箱编号": "S014-MED-01",
+      "交付时刻（s）": 4286.826841255156,
+      "硬截止（s）": 3600.0
+    },
+    {
+      "货箱编号": "S014-WAT-01",
+      "交付时刻（s）": 4286.826841255156,
+      "硬截止（s）": 3600.0
+    }
+  ],
+  "constraint_audit": {
+    "status": "PASS",
+    "violations": 0,
+    "cargo_boxes": 80,
+    "trips": 18,
+    "drone_resources_used": 5,
+    "battery_resources_used": 9
+  },
+  "seed_stability": {
+    "timeliness_loss": {
+      "best": 73062.00919624596,
+      "median": 75042.00919624596,
+      "mean": 76407.20421664382,
+      "population_std": 3407.470779006198,
+      "values": [
+        82367.46544032313,
+        73062.00919624596,
+        77867.26209513129,
+        73697.27515527279,
+        75042.00919624596
+      ]
+    },
+    "makespan": {
+      "best": 8877.101337696538,
+      "median": 8969.833443696296,
+      "mean": 9008.579890020994,
+      "population_std": 138.69643145023133,
+      "values": [
+        9277.4733132871,
+        8969.833443696296,
+        8877.101337696538,
+        8948.657911728735,
+        8969.833443696296
+      ]
+    },
+    "energy": {
+      "best": 59.55623486156602,
+      "median": 59.556234861566026,
+      "mean": 59.65836848315878,
+      "population_std": 0.14059232537860925,
+      "values": [
+        59.710088782444366,
+        59.55623486156602,
+        59.556234861566026,
+        59.55623486156602,
+        59.913049048651466
+      ]
+    },
+    "trip_count": {
+      "best": 18,
+      "median": 18,
+      "mean": 18,
+      "population_std": 0.0,
+      "values": [
+        18,
+        18,
+        18,
+        18,
+        18
+      ]
+    }
+  },
+  "selected_operator_counts": {
+    "service_relocate": 260,
+    "route_swap": 207,
+    "late_route_relocate": 149,
+    "high_energy_relocate": 196,
+    "related_service_swap": 259,
+    "merge": 164,
+    "split": 151,
+    "box_move": 239,
+    "box_exchange": 186,
+    "route_reverse": 189
+  },
+  "selected_operator_accepted": {
+    "service_relocate": 19,
+    "route_swap": 6,
+    "late_route_relocate": 0,
+    "high_energy_relocate": 7,
+    "related_service_swap": 36,
+    "merge": 0,
+    "split": 0,
+    "box_move": 19,
+    "box_exchange": 6,
+    "route_reverse": 0
+  },
+  "selected_operator_improvements": {
+    "service_relocate": 8,
+    "route_swap": 2,
+    "late_route_relocate": 0,
+    "high_energy_relocate": 0,
+    "related_service_swap": 4,
+    "merge": 0,
+    "split": 0,
+    "box_move": 6,
+    "box_exchange": 2,
+    "route_reverse": 0
+  },
+  "selected_pair_merge_descent": []
+}

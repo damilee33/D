@@ -1,0 +1,26 @@
+{
+  "status": "FROZEN_PASS",
+  "solution_version": "S1-v1.0.0-provisional_v0",
+  "frozen_at_utc": "2026-09-24T02:01:30.6906589Z",
+  "independent_audit": {
+    "status": "PASS",
+    "p0_count": 0,
+    "p1_count": 0,
+    "p2_count_after_visual_fix": 0
+  },
+  "metrics": {
+    "trip_count": 18,
+    "total_energy_kwh": 59.11903528961919,
+    "cumulative_work_seconds": 32746.430315307625,
+    "hard_constraint_violations": 0,
+    "cargo_boxes_exactly_once": 80
+  },
+  "sha256": {
+    "q1_summary.json": "86e3ea1ce02f5452f9d0d9ca46f0b00eed9589bd1e752ea8a03d1e45b787b8d0",
+    "main_trips.csv": "68b4539bd67a5c4eb82d76d9e590bcb8b31a7da2f79a048518a785674764cc6e",
+    "结果提交_Q1.xlsx": "5cec95b2356aa44450fa9d47c7ab31d3875d0ca885df0a3368a0d739ded890a0",
+    "config/model.json": "755b983e9156789839ee85c34b3d996aafb34e7473f036bebb68daee87d01f5a",
+    "src/dproblem/q1/solver.py": "28ce404384698fd16c53f413626c183da70e15c9b0924aaab06e9ab63dfe0418"
+  },
+  "invalidation_rule": "Any official energy-definition update invalidates S1 and requires rerunning Q1-Q4."
+}

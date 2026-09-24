@@ -1,0 +1,189 @@
+{
+  "style": {
+    "journal": "general",
+    "lang": "zh",
+    "sciplots_used": false,
+    "cjk_font": "SimSun",
+    "constrained_layout": true
+  },
+  "visual_review": {
+    "rounds": 2,
+    "status": "PASS",
+    "checks": [
+      "中文与符号",
+      "裁切与重叠",
+      "图例遮挡",
+      "灰度辨识",
+      "数据主张一致性"
+    ]
+  },
+  "figures": [
+    {
+      "id": "raw_q2_service_deadline_map",
+      "core_claim": "首批时限具有明确空间分布。",
+      "evidence": "节点坐标与首批截止时间。"
+    },
+    {
+      "id": "raw_q2_deadline_structure",
+      "core_claim": "服务区时限层次不同。",
+      "evidence": "逐箱期望时间与首批截止。"
+    },
+    {
+      "id": "raw_q2_resource_inventory",
+      "core_claim": "机型、实体机与电池异构。",
+      "evidence": "运输无人机附件。"
+    },
+    {
+      "id": "process_q2_baseline_deadline",
+      "core_claim": "固定Q1批次的EDF baseline存在两个硬截止违例。",
+      "evidence": "独立时间线交付与截止对比。"
+    },
+    {
+      "id": "process_q2_alns_convergence",
+      "core_claim": "五个种子的历史最优及时性损失随搜索下降。",
+      "evidence": "2000次迭代记录。"
+    },
+    {
+      "id": "process_q2_seed_pareto",
+      "core_claim": "多种子方案存在及时性、完成时间与能耗权衡。",
+      "evidence": "五个最终可行解。"
+    },
+    {
+      "id": "result_q2_drone_gantt",
+      "core_claim": "实体无人机占用无重叠。",
+      "evidence": "S2架次开始与返回时刻。"
+    },
+    {
+      "id": "result_q2_battery_timeline",
+      "core_claim": "电池任务与充电区间无冲突。",
+      "evidence": "S2电池任务、SOC与充电记录。"
+    },
+    {
+      "id": "result_q2_delivery_deadlines",
+      "core_claim": "各服务区硬截止全部满足。",
+      "evidence": "80箱交付时刻与最早硬截止。"
+    }
+  ],
+  "qa": [
+    {
+      "basename": "D:\\D\\figures\\raw_q2_service_deadline_map",
+      "verdict": "WARN",
+      "issues": [
+        [
+          "WARN",
+          "以下文字可能超出画布被裁切：['经度（°）', '纬度（°）']。跑 finalize_figure(fig) 或导出时 bbox_inches='tight' 兜底；标题/标签过长可换行或缩短。"
+        ]
+      ],
+      "outputs": [
+        "D:\\D\\figures\\raw_q2_service_deadline_map.pdf",
+        "D:\\D\\figures\\raw_q2_service_deadline_map.svg",
+        "D:\\D\\figures\\raw_q2_service_deadline_map.png"
+      ]
+    },
+    {
+      "basename": "D:\\D\\figures\\raw_q2_deadline_structure",
+      "verdict": "WARN",
+      "issues": [
+        [
+          "WARN",
+          "以下文字可能超出画布被裁切：['服务区']。跑 finalize_figure(fig) 或导出时 bbox_inches='tight' 兜底；标题/标签过长可换行或缩短。"
+        ]
+      ],
+      "outputs": [
+        "D:\\D\\figures\\raw_q2_deadline_structure.pdf",
+        "D:\\D\\figures\\raw_q2_deadline_structure.svg",
+        "D:\\D\\figures\\raw_q2_deadline_structure.png"
+      ]
+    },
+    {
+      "basename": "D:\\D\\figures\\raw_q2_resource_inventory",
+      "verdict": "PASS",
+      "issues": [],
+      "outputs": [
+        "D:\\D\\figures\\raw_q2_resource_inventory.pdf",
+        "D:\\D\\figures\\raw_q2_resource_inventory.svg",
+        "D:\\D\\figures\\raw_q2_resource_inventory.png"
+      ]
+    },
+    {
+      "basename": "D:\\D\\figures\\process_q2_baseline_deadline",
+      "verdict": "PASS",
+      "issues": [],
+      "outputs": [
+        "D:\\D\\figures\\process_q2_baseline_deadline.pdf",
+        "D:\\D\\figures\\process_q2_baseline_deadline.svg",
+        "D:\\D\\figures\\process_q2_baseline_deadline.png"
+      ]
+    },
+    {
+      "basename": "D:\\D\\figures\\process_q2_alns_convergence",
+      "verdict": "WARN",
+      "issues": [
+        [
+          "WARN",
+          "以下文字可能超出画布被裁切：['历史最优及时性损失（加权 s）']。跑 finalize_figure(fig) 或导出时 bbox_inches='tight' 兜底；标题/标签过长可换行或缩短。"
+        ]
+      ],
+      "outputs": [
+        "D:\\D\\figures\\process_q2_alns_convergence.pdf",
+        "D:\\D\\figures\\process_q2_alns_convergence.svg",
+        "D:\\D\\figures\\process_q2_alns_convergence.png"
+      ]
+    },
+    {
+      "basename": "D:\\D\\figures\\process_q2_seed_pareto",
+      "verdict": "WARN",
+      "issues": [
+        [
+          "WARN",
+          "以下文字可能超出画布被裁切：['运输完成时间（h）']。跑 finalize_figure(fig) 或导出时 bbox_inches='tight' 兜底；标题/标签过长可换行或缩短。"
+        ]
+      ],
+      "outputs": [
+        "D:\\D\\figures\\process_q2_seed_pareto.pdf",
+        "D:\\D\\figures\\process_q2_seed_pareto.svg",
+        "D:\\D\\figures\\process_q2_seed_pareto.png"
+      ]
+    },
+    {
+      "basename": "D:\\D\\figures\\result_q2_drone_gantt",
+      "verdict": "WARN",
+      "issues": [
+        [
+          "WARN",
+          "以下文字可能超出画布被裁切：['实体无人机']。跑 finalize_figure(fig) 或导出时 bbox_inches='tight' 兜底；标题/标签过长可换行或缩短。"
+        ]
+      ],
+      "outputs": [
+        "D:\\D\\figures\\result_q2_drone_gantt.pdf",
+        "D:\\D\\figures\\result_q2_drone_gantt.svg",
+        "D:\\D\\figures\\result_q2_drone_gantt.png"
+      ]
+    },
+    {
+      "basename": "D:\\D\\figures\\result_q2_battery_timeline",
+      "verdict": "PASS",
+      "issues": [],
+      "outputs": [
+        "D:\\D\\figures\\result_q2_battery_timeline.pdf",
+        "D:\\D\\figures\\result_q2_battery_timeline.svg",
+        "D:\\D\\figures\\result_q2_battery_timeline.png"
+      ]
+    },
+    {
+      "basename": "D:\\D\\figures\\result_q2_delivery_deadlines",
+      "verdict": "WARN",
+      "issues": [
+        [
+          "WARN",
+          "以下文字可能超出画布被裁切：['服务区']。跑 finalize_figure(fig) 或导出时 bbox_inches='tight' 兜底；标题/标签过长可换行或缩短。"
+        ]
+      ],
+      "outputs": [
+        "D:\\D\\figures\\result_q2_delivery_deadlines.pdf",
+        "D:\\D\\figures\\result_q2_delivery_deadlines.svg",
+        "D:\\D\\figures\\result_q2_delivery_deadlines.png"
+      ]
+    }
+  ]
+}
