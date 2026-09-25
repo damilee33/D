@@ -1,0 +1,10 @@
+{
+  "status": "PASS",
+  "parent_version": "S2-v1.1.0-provisional_v0",
+  "step_seconds": 5.0,
+  "sample_count": 6546,
+  "gap_count": 17,
+  "trips_with_gaps": 17,
+  "total_conservative_gap_seconds": 12589.106012492928,
+  "minimum_direct_margin_db": -6.204627721756481
+}

@@ -1,0 +1,40 @@
+{
+  "status": "PASS",
+  "candidate_count": 36,
+  "relocation_count": 3,
+  "initial_pair": [
+    "C032-H300",
+    "MC-early-R0615C0836H300"
+  ],
+  "actions": [
+    {
+      "action": "relocate",
+      "origin": "C032-H300",
+      "destination": "C039-H300",
+      "stationary": "MC-early-R0615C0836H300",
+      "start_seconds": 1763.7226980050534,
+      "arrival_seconds": 3214.058142993368
+    },
+    {
+      "action": "relocate",
+      "origin": "C039-H300",
+      "destination": "C011-H300",
+      "stationary": "MC-early-R0615C0836H300",
+      "start_seconds": 3603.3703769008666,
+      "arrival_seconds": 5197.098434026248
+    },
+    {
+      "action": "relocate",
+      "origin": "MC-early-R0615C0836H300",
+      "destination": "C004-H300",
+      "stationary": "C011-H300",
+      "start_seconds": 6846.5950962841525,
+      "arrival_seconds": 8361.84451387266
+    }
+  ],
+  "final_pair": [
+    "C004-H300",
+    "C011-H300"
+  ],
+  "coverage_end_seconds": 10825.82987187404
+}

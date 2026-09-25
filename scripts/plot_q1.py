@@ -31,7 +31,8 @@ def read_csv(path):
 
 def export_with_qa(fig, basename, size_inches):
     finalize_figure(fig)
-    qa_dir = basename.parent.parent / "results" / "q1" / "figure_qa"
+    question = "q2" if "_q2_" in basename.name else "q1"
+    qa_dir = basename.parent.parent / "results" / question / "figure_qa"
     qa_dir.mkdir(parents=True, exist_ok=True)
     preview = qa_dir / (basename.name + "_preview.png")
     render_preview(fig, preview, dpi=150)
@@ -42,7 +43,9 @@ def export_with_qa(fig, basename, size_inches):
     outputs = export_figure(
         fig,
         str(basename),
-        formats=["pdf", "svg", "png"],
+        # Project-level delivery decision: the final paper is Word-only, so
+        # future figures are exported as high-resolution PNG only.
+        formats=["png"],
         size_inches=size_inches,
         dpi=300,
         grayscale_preview=False,

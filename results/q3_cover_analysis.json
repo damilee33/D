@@ -1,0 +1,78 @@
+{
+  "cell_count": 2542,
+  "candidate_count_with_coverage": 266,
+  "components": [
+    {
+      "component": 1,
+      "start_seconds": 738.3506103515625,
+      "end_seconds": 1606.041828323875,
+      "gap_ids": [
+        "Q2-002-G01",
+        "Q2-003-G01",
+        "Q2-004-G01",
+        "Q2-007-G01"
+      ],
+      "cell_count": 536,
+      "minimum_candidate_count": 2,
+      "feasible_cover_count": 52,
+      "example_cover": [
+        "C011-H100",
+        "MC-early-R0615C0836H300"
+      ]
+    },
+    {
+      "component": 2,
+      "start_seconds": 1990.600882530999,
+      "end_seconds": 3649.241880906149,
+      "gap_ids": [
+        "Q2-005-G01",
+        "Q2-006-G01",
+        "Q2-008-G01",
+        "Q2-020-G01",
+        "Q2-021-G01",
+        "Q2-022-G01"
+      ],
+      "cell_count": 928,
+      "minimum_candidate_count": null,
+      "feasible_cover_count": 0,
+      "example_cover": []
+    },
+    {
+      "component": 3,
+      "start_seconds": 4319.5196097147345,
+      "end_seconds": 5903.132214248026,
+      "gap_ids": [
+        "Q2-011-G01",
+        "Q2-013-G01",
+        "Q2-015-G01",
+        "Q2-018-G01"
+      ],
+      "cell_count": 610,
+      "minimum_candidate_count": null,
+      "feasible_cover_count": 0,
+      "example_cover": []
+    },
+    {
+      "component": 4,
+      "start_seconds": 6255.441445068504,
+      "end_seconds": 7660.170847116662,
+      "gap_ids": [
+        "Q2-016-G01",
+        "Q2-019-G01",
+        "Q2-023-G01"
+      ],
+      "cell_count": 468,
+      "minimum_candidate_count": 2,
+      "feasible_cover_count": 98,
+      "example_cover": [
+        "C011-H300",
+        "MC-early-R0615C0836H300"
+      ]
+    }
+  ],
+  "global_cover_with_at_most_two_fixed_candidates": null,
+  "atomic_time_interval_count": 2402,
+  "maximum_simultaneous_gap_count": 5,
+  "atomic_intervals_without_two_candidate_cover": [],
+  "maximum_atomic_minimum_candidate_count": 2
+}

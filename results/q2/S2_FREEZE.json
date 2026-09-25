@@ -1,0 +1,43 @@
+{
+  "status": "FROZEN_PASS",
+  "solution_version": "S2-v1.1.0-provisional_v0",
+  "parent_version": "S1-v1.0.0-provisional_v0",
+  "frozen_at_utc": "2026-09-24T09:56:22.9209972Z",
+  "independent_audit": {
+    "status": "PASS",
+    "p0_count": 0,
+    "p1_count": 0,
+    "p2_count_after_visual_fix": 0,
+    "tests_passed": 51,
+    "seed_count": 5,
+    "iterations_per_seed": 2000
+  },
+  "metrics": {
+    "selected_seed": 20260927,
+    "timeliness_loss_weighted_seconds": 0.0,
+    "transport_makespan_seconds": 8003.278303575325,
+    "total_energy_kwh": 67.4414221399822,
+    "trip_count": 23,
+    "multi_stop_trip_count": 1,
+    "hard_constraint_violations": 0,
+    "cargo_boxes_exactly_once": 80,
+    "minimum_hard_deadline_margin_seconds": 284.2758751723877,
+    "drones_used": 8,
+    "batteries_used": 14
+  },
+  "sha256": {
+    "results/q2/q2_summary.json": "c2bd67ad741e44593f6c621fc4a339f0968f1d17dd9821bb789a0374767893f7",
+    "results/q2/main_trips.csv": "d27b56856435223249d2ab5d1469a7d02944478103b13a0fd5fab49280486c5f",
+    "results/q2/main_box_deliveries.csv": "fcf577094025c6396453cb7ff664a5fc6c362f80043e922daa80a5fd55ff3635",
+    "results/q2/main_segments.csv": "74ff2bbfa9aa23b1195826a49873162b7385a89ff682c165c665a32f12033e86",
+    "results/q2/main_timeline.csv": "20d588b15e5b0bd44436dc53c9f9beab620f3a91644e872a95623a8a43a2a404",
+    "results/q2/main_battery_timeline.csv": "f8b4d9f9272125f4bfe2877ab662f8dbef6f4c7bdb9fa62479e4d2ca17e568bb",
+    "results/q2/结果提交_Q2.xlsx": "678f07307278378dac264c1c9912cc8e50728be42bc357b8cfb24e82e5246a0d",
+    "results/q2/Q2结果说明.md": "a2285267ec18cbada6627c1adf5c7107f8489898e6ad02dd31c8b49cfd4fe96a",
+    "config/model.json": "755b983e9156789839ee85c34b3d996aafb34e7473f036bebb68daee87d01f5a",
+    "src/dproblem/q2/alns.py": "eb81141dc0788accda06c24be014ed99746a8f6b73fb1a008a45315f769c9fe0",
+    "src/dproblem/q2/solver.py": "ae4ac42f814d166fa817084e5abbca6e1c45a1f1737e6b755f9ab83506be08ff",
+    "scripts/plot_q2.py": "b3ee6f701663fcb2d655ad5c4f9e1b6330630f7ec506873c51993d3ca65cc851"
+  },
+  "invalidation_rule": "Any official energy-definition update invalidates S1 and S2 and requires rerunning Q1-Q4. Any change to a hashed S2 artifact invalidates this freeze and requires a full Q2 audit before Q3 reads it."
+}

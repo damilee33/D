@@ -13,7 +13,7 @@
   },
   "cargo": {
     "total_mass_kg": 758,
-    "total_volume_m3": 2.0109999999999992,
+    "total_volume_m3": 2.011,
     "counts_by_material": {
       "医疗物资": 16,
       "饮用水": 36,
@@ -31,6 +31,11 @@
       "A": 6,
       "B": 4,
       "C": 4
+    },
+    "usable_volume_m3_by_type": {
+      "A": 0.06,
+      "B": 0.073,
+      "C": 0.25
     }
   },
   "relay_resources": {
@@ -67,7 +72,7 @@
     "q1_work_time_status": "answerer_defined"
   },
   "runtime": {
-    "python": "3.8.5",
-    "platform": "Windows-10-10.0.26100-SP0"
+    "python": "3.12.14",
+    "platform": "Windows-11-10.0.26200-SP0"
   }
 }

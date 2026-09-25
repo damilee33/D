@@ -146,7 +146,7 @@ def solve_q2(project_root, seeds=DEFAULT_SEEDS, iterations=500):
         }
     summary = {
         "status": "PASS",
-        "solution_version": "S2-v1.0.0-provisional_v0",
+        "solution_version": "S2-v1.1.0-provisional_v0",
         "parent_version": "S1-v1.0.0-provisional_v0",
         "generated_at_utc": datetime.now(timezone.utc).isoformat(),
         "input_manifest_sha256": input_manifest["manifest_sha256"],
@@ -154,7 +154,7 @@ def solve_q2(project_root, seeds=DEFAULT_SEEDS, iterations=500):
         "parent_s1_freeze_sha256": sha256_file(project_root / "results" / "q1" / "S1_FREEZE.json"),
         "energy_model_version": config["energy_model"]["version"],
         "transport_timeline_version": config["transport_timeline"]["version"],
-        "solver": "urgency_repair_plus_multiseed_alns_plus_exact_pair_merge_descent",
+        "solver": "urgency_repair_plus_semantic_destroy_repair_multiseed_alns_plus_exact_pair_merge_descent",
         "seeds": list(seeds),
         "iterations_per_seed": iterations,
         "selected_seed": selected["seed"],
@@ -182,6 +182,7 @@ def solve_q2(project_root, seeds=DEFAULT_SEEDS, iterations=500):
         "selected_operator_counts": selected["operator_counts"],
         "selected_operator_accepted": selected["operator_accepted"],
         "selected_operator_improvements": selected["operator_improvements"],
+        "selected_operator_rejections": selected["operator_rejections"],
         "selected_pair_merge_descent": selected["pair_merge_descent"],
     }
     return {

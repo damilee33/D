@@ -1,0 +1,66 @@
+{
+  "status": "PASS",
+  "segment_count": 6,
+  "segments": [
+    {
+      "segment_index": 1,
+      "start_seconds": 738.3506103515625,
+      "end_seconds": 1606.041828323875,
+      "candidate_ids": [
+        "MC-middle-R0650C0869H300",
+        "MC-middle-R0680C0544H300"
+      ],
+      "duration_seconds": 867.6912179723125
+    },
+    {
+      "segment_index": 2,
+      "start_seconds": 1990.600882530999,
+      "end_seconds": 2923.5528476039913,
+      "candidate_ids": [
+        "MC-middle-R0650C0869H300",
+        "MC-middle-R0680C0544H300"
+      ],
+      "duration_seconds": 932.9519650729924
+    },
+    {
+      "segment_index": 3,
+      "start_seconds": 2923.5528476039913,
+      "end_seconds": 3649.241880906149,
+      "candidate_ids": [
+        "C013-H300",
+        "C039-H300"
+      ],
+      "duration_seconds": 725.6890333021579
+    },
+    {
+      "segment_index": 4,
+      "start_seconds": 4319.5196097147345,
+      "end_seconds": 4904.742581119948,
+      "candidate_ids": [
+        "C019-H300",
+        "Q2-013-G01-R0587C0647H300"
+      ],
+      "duration_seconds": 585.2229714052137
+    },
+    {
+      "segment_index": 5,
+      "start_seconds": 4904.742581119948,
+      "end_seconds": 5903.132214248026,
+      "candidate_ids": [
+        "MC-early-R0715C0611H200",
+        "Q2-013-G01-R0587C0647H300"
+      ],
+      "duration_seconds": 998.3896331280775
+    },
+    {
+      "segment_index": 6,
+      "start_seconds": 6255.441445068504,
+      "end_seconds": 7660.170847116662,
+      "candidate_ids": [
+        "MC-early-R0715C0611H200",
+        "Q2-016-G01-R0593C0753H300"
+      ],
+      "duration_seconds": 1404.7294020481577
+    }
+  ]
+}

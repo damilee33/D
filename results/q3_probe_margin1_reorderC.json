@@ -1,0 +1,148 @@
+{
+  "status": "FAIL",
+  "candidate_count": 36,
+  "reachable_state_count": 61642,
+  "maximum_reached_seconds": 4682.169318065802,
+  "active_gap_ids_before_failure": [],
+  "active_gap_ids_after_failure": [
+    "Q2-013-G01"
+  ],
+  "reachable_pair_count_at_failure": 1,
+  "reachable_pairs_at_failure": [
+    [
+      "C033-H300",
+      "MC-early-R0615C0836H300"
+    ]
+  ],
+  "diagnostic_initial_pair": [
+    "C028-H200",
+    "MC-early-R0615C0836H300"
+  ],
+  "diagnostic_actions_to_failure": [
+    {
+      "action": "relocate",
+      "origin": "C028-H200",
+      "destination": "C033-H300",
+      "stationary": "MC-early-R0615C0836H300",
+      "start_seconds": 1763.7226980050534,
+      "arrival_seconds": 3134.3283167862332
+    }
+  ],
+  "covering_pair_count_after_failure": 609,
+  "covering_pairs_after_failure": [
+    [
+      "C004-H300",
+      "C012-H300"
+    ],
+    [
+      "C004-H300",
+      "C013-H300"
+    ],
+    [
+      "C004-H300",
+      "C019-H300"
+    ],
+    [
+      "C004-H300",
+      "C033-H300"
+    ],
+    [
+      "C004-H300",
+      "C039-H300"
+    ],
+    [
+      "C004-H300",
+      "MC-early-R0715C0611H200"
+    ],
+    [
+      "C004-H300",
+      "MC-middle-R0650C0869H300"
+    ],
+    [
+      "C004-H300",
+      "MC-middle-R0680C0544H300"
+    ],
+    [
+      "C004-H300",
+      "Q2-013-G01-R0587C0647H300"
+    ],
+    [
+      "C004-H300",
+      "Q2-016-G01-R0593C0753H300"
+    ],
+    [
+      "C004-H300",
+      "C009-H300"
+    ],
+    [
+      "C004-H300",
+      "C010-H300"
+    ],
+    [
+      "C004-H300",
+      "C007-H300"
+    ],
+    [
+      "C004-H300",
+      "C008-H300"
+    ],
+    [
+      "C004-H300",
+      "C007-H200"
+    ],
+    [
+      "C004-H300",
+      "C008-H200"
+    ],
+    [
+      "C004-H300",
+      "C015-H300"
+    ],
+    [
+      "C004-H300",
+      "C012-H200"
+    ],
+    [
+      "C004-H300",
+      "C013-H200"
+    ],
+    [
+      "C004-H300",
+      "MC-early-R0615C0836H300"
+    ]
+  ],
+  "candidate_coverage_before_failure": {},
+  "candidate_coverage_after_failure": {
+    "Q2-013-G01": [
+      "C004-H300",
+      "C007-H100",
+      "C007-H200",
+      "C007-H300",
+      "C008-H100",
+      "C008-H200",
+      "C008-H300",
+      "C009-H200",
+      "C009-H300",
+      "C010-H200",
+      "C010-H300",
+      "C012-H200",
+      "C012-H300",
+      "C013-H200",
+      "C013-H300",
+      "C014-H300",
+      "C015-H200",
+      "C015-H300",
+      "C016-H300",
+      "C017-H300",
+      "C019-H200",
+      "C019-H300",
+      "C020-H200",
+      "C020-H300",
+      "C024-H300",
+      "C028-H200",
+      "C029-H200",
+      "C032-H200",
+      "Q2-013-G01-R0587C0647H300"
+    ]
+  }
+}

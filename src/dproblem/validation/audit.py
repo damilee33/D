@@ -165,6 +165,24 @@ def _validate_physical_parameters(data, model_config):
         if not 0 < row["爬升能耗效率"] <= 1:
             raise AssertionError("运输机型 {} 爬升效率超界".format(type_id))
 
+    # The source workbook displays column E with one decimal place, but the
+    # stored values are more precise.  These assertions prevent a future
+    # manual transcription of the displayed 0.1/0.1/0.3 values from silently
+    # replacing the authoritative 0.060/0.073/0.250 m^3 values.
+    expected_usable_volumes = {"A": 0.060, "B": 0.073, "C": 0.250}
+    actual_usable_volumes = {
+        row["机型编号"]: row["可用装载体积（m³）"]
+        for row in data["transport"]["types"]
+    }
+    _assert_equal(set(actual_usable_volumes), set(expected_usable_volumes), "运输机型体积参数集合")
+    for type_id, expected in expected_usable_volumes.items():
+        _assert_close(
+            actual_usable_volumes[type_id],
+            expected,
+            "运输机型 {} 精确可用装载体积".format(type_id),
+            tolerance=1e-12,
+        )
+
     type_ids = {row["机型编号"] for row in data["transport"]["types"]}
     for row in data["transport"]["drones"]:
         if row["机型编号"] not in type_ids:
@@ -286,6 +304,10 @@ def build_data_audit(project_root):
         "transport_resources": {
             "drones_by_type": dict(drone_type_counts),
             "batteries_by_type": battery_counts,
+            "usable_volume_m3_by_type": {
+                row["机型编号"]: row["可用装载体积（m³）"]
+                for row in transport["types"]
+            },
         },
         "relay_resources": {
             "drones": len(relay["drones"]),
@@ -333,6 +355,11 @@ def write_audit(project_root, output_dir):
                 "- 总质量：{:.3f} kg".format(audit["cargo"]["total_mass_kg"]),
                 "- 总体积：{:.3f} m³".format(audit["cargo"]["total_volume_m3"]),
                 "- 运输无人机：{} 架；中继无人机：{} 架".format(audit["counts"]["transport_drones"], audit["counts"]["relay_drones"]),
+                "- 运输机型精确可用装载体积：A={:.3f}、B={:.3f}、C={:.3f} m³（读取单元格底层值）".format(
+                    audit["transport_resources"]["usable_volume_m3_by_type"]["A"],
+                    audit["transport_resources"]["usable_volume_m3_by_type"]["B"],
+                    audit["transport_resources"]["usable_volume_m3_by_type"]["C"],
+                ),
                 "- DEM：{}×{}，EPSG:{}，高程 {:.4f}—{:.4f} m".format(audit["dem"]["width"], audit["dem"]["height"], audit["dem"]["epsg"], audit["dem"]["minimum_m"], audit["dem"]["maximum_m"]),
                 "- 能耗口径：`{}`（答题者暂定）".format(audit["model_contract"]["energy_model_version"]),
                 "- Q1 累计作业时间：`{}`（答题者定义；非并行 makespan）".format(audit["model_contract"]["q1_work_time_version"]),

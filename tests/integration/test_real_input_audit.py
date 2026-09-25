@@ -21,6 +21,10 @@ class RealInputAuditTests(unittest.TestCase):
         self.assertEqual(
             audit["model_contract"]["energy_model_version"], "provisional_v0"
         )
+        self.assertEqual(
+            audit["transport_resources"]["usable_volume_m3_by_type"],
+            {"A": 0.060, "B": 0.073, "C": 0.250},
+        )
 
     def test_mutated_deadlines_are_rejected(self):
         demands = deepcopy(load_project_data(PROJECT_ROOT)["demands"])

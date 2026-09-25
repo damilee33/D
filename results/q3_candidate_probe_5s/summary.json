@@ -1,0 +1,12 @@
+{
+  "status": "FAIL",
+  "step_seconds": 5.0,
+  "candidate_count": 117,
+  "gap_count": 17,
+  "fully_coverable_gap_count": 15,
+  "uncovered_gap_ids": [
+    "Q2-013-G01",
+    "Q2-016-G01"
+  ],
+  "candidate_gap_cover_pairs": 340
+}

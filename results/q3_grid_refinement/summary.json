@@ -1,0 +1,10 @@
+{
+  "status": "PASS",
+  "grid_stride_cells": 5,
+  "nominal_grid_spacing_m": 150,
+  "retained_candidate_count": 160,
+  "maximum_covered_hole_seconds": {
+    "Q2-013-G01": 373.32943420410174,
+    "Q2-016-G01": 405.96958312988227
+  }
+}

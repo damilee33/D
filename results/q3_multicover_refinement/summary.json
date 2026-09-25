@@ -1,0 +1,25 @@
+{
+  "status": "PASS",
+  "grid_stride_cells": 5,
+  "nominal_grid_spacing_m": 150,
+  "targets": [
+    {
+      "target_label": "early",
+      "status": "PASS",
+      "candidate_1": "MC-early-R0615C0836H300",
+      "candidate_2": "MC-early-R0715C0611H200",
+      "active_gap_ids": "Q2-002-G01;Q2-004-G01;Q2-007-G01",
+      "window_start_seconds": 1063.0,
+      "window_end_seconds": 1287.0
+    },
+    {
+      "target_label": "middle",
+      "status": "PASS",
+      "candidate_1": "MC-middle-R0650C0869H300",
+      "candidate_2": "MC-middle-R0680C0544H300",
+      "active_gap_ids": "Q2-005-G01;Q2-006-G01;Q2-020-G01;Q2-021-G01",
+      "window_start_seconds": 2582.0,
+      "window_end_seconds": 2593.0
+    }
+  ]
+}

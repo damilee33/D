@@ -172,13 +172,8 @@
     },
     {
       "basename": "D:\\D\\figures\\result_q2_delivery_deadlines",
-      "verdict": "WARN",
-      "issues": [
-        [
-          "WARN",
-          "以下文字可能超出画布被裁切：['服务区']。跑 finalize_figure(fig) 或导出时 bbox_inches='tight' 兜底；标题/标签过长可换行或缩短。"
-        ]
-      ],
+      "verdict": "PASS",
+      "issues": [],
       "outputs": [
         "D:\\D\\figures\\result_q2_delivery_deadlines.pdf",
         "D:\\D\\figures\\result_q2_delivery_deadlines.svg",

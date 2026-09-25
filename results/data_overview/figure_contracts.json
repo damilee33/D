@@ -1,0 +1,141 @@
+{
+  "status": "PASS",
+  "figure_size_inches": [
+    9.0,
+    5.5
+  ],
+  "style": {
+    "journal": "general",
+    "lang": "zh",
+    "sciplots_used": false,
+    "cjk_font": "SimSun",
+    "constrained_layout": true
+  },
+  "visual_review": {
+    "rounds": 2,
+    "status": "PASS",
+    "checks": [
+      "中文与特殊符号",
+      "标题与坐标轴裁切",
+      "数值标注重叠",
+      "图例遮挡",
+      "服务区标签遮挡",
+      "灰度辨识"
+    ]
+  },
+  "design_decisions": [
+    "物资箱数与总质量采用上下双面板共享分类轴，避免双Y轴视觉误导。",
+    "柱状与折线使用不同的色盲安全颜色，数值标注位于不同面板。",
+    "资源库存使用颜色与纹理双重编码。",
+    "DEM使用抽样矢量网格、陆地terrain连续色带及带单位的colorbar。"
+  ],
+  "profile_scope": "四类物资和三类运输资源均为完整清单中的确定性总量，不是抽样统计量；因此小样本统计图提示不适用，也不绘制误差棒。",
+  "source_files": {
+    "demand_workbook": "D:\\D\\数据\\无人机应急物资运输基础数据\\物资需求与配送时限.xlsx",
+    "transport_workbook": "D:\\D\\数据\\无人机应急物资运输基础数据\\运输无人机数据.xlsx",
+    "nodes_workbook": "D:\\D\\数据\\无人机应急物资运输基础数据\\调度中心与服务区.xlsx",
+    "dem_tif": "D:\\D\\数据\\镇龙乡地理空间数据\\镇龙乡及周边地理数据\\数字高程模型数据（DEM）\\镇龙乡及周边30米DEM.tif"
+  },
+  "material_profile": [
+    {
+      "物资类型": "医疗物资",
+      "货箱数量（箱）": 16,
+      "总质量（kg）": 48.0,
+      "总体积（m³）": 0.19200000000000003
+    },
+    {
+      "物资类型": "饮用水",
+      "货箱数量（箱）": 36,
+      "总质量（kg）": 504.0,
+      "总体积（m³）": 0.9720000000000006
+    },
+    {
+      "物资类型": "应急食品",
+      "货箱数量（箱）": 19,
+      "总质量（kg）": 152.0,
+      "总体积（m³）": 0.5320000000000003
+    },
+    {
+      "物资类型": "生活卫生用品",
+      "货箱数量（箱）": 9,
+      "总质量（kg）": 54.0,
+      "总体积（m³）": 0.31500000000000006
+    }
+  ],
+  "resource_profile": [
+    {
+      "机型": "A",
+      "实体无人机（架）": 4,
+      "共享电池组（组）": 6
+    },
+    {
+      "机型": "B",
+      "实体无人机（架）": 2,
+      "共享电池组（组）": 4
+    },
+    {
+      "机型": "C",
+      "实体无人机（架）": 2,
+      "共享电池组（组）": 4
+    }
+  ],
+  "figures": [
+    {
+      "id": "图1_各类物资箱数与总质量分布",
+      "size_inches": [
+        9.0,
+        5.5
+      ],
+      "layout_verdict": "PASS",
+      "layout_issues": [],
+      "preview": "D:\\D\\results\\data_overview\\figure_qa\\图1_各类物资箱数与总质量分布_preview.png",
+      "outputs": [
+        "D:\\D\\figures\\data_overview\\图1_各类物资箱数与总质量分布.pdf",
+        "D:\\D\\figures\\data_overview\\图1_各类物资箱数与总质量分布.svg",
+        "D:\\D\\figures\\data_overview\\图1_各类物资箱数与总质量分布.png",
+        "D:\\D\\figures\\data_overview\\图1_各类物资箱数与总质量分布_grayscale.png"
+      ],
+      "core_claim": "饮用水同时占据最多货箱和最大质量，是运输需求的主要负担。",
+      "evidence": "80个逐箱记录按物资类型汇总；柱为箱数，折线为总质量。",
+      "chart": "上下双面板共享分类轴：柱状图+折线图，避免双Y轴误导。"
+    },
+    {
+      "id": "图2_ABC无人机及电池资源数量",
+      "size_inches": [
+        9.0,
+        5.5
+      ],
+      "layout_verdict": "PASS",
+      "layout_issues": [],
+      "preview": "D:\\D\\results\\data_overview\\figure_qa\\图2_ABC无人机及电池资源数量_preview.png",
+      "outputs": [
+        "D:\\D\\figures\\data_overview\\图2_ABC无人机及电池资源数量.pdf",
+        "D:\\D\\figures\\data_overview\\图2_ABC无人机及电池资源数量.svg",
+        "D:\\D\\figures\\data_overview\\图2_ABC无人机及电池资源数量.png",
+        "D:\\D\\figures\\data_overview\\图2_ABC无人机及电池资源数量_grayscale.png"
+      ],
+      "core_claim": "A型无人机和对应电池组数量最多，B/C型实体机库存均为2架。",
+      "evidence": "运输无人机数据.xlsx中的实体编号与共享电池库存。",
+      "chart": "按机型分组的双系列柱状图，颜色与纹理双重编码。"
+    },
+    {
+      "id": "图3_DEM地形及调度中心与服务区分布",
+      "size_inches": [
+        9.0,
+        5.5
+      ],
+      "layout_verdict": "PASS",
+      "layout_issues": [],
+      "preview": "D:\\D\\results\\data_overview\\figure_qa\\图3_DEM地形及调度中心与服务区分布_preview.png",
+      "outputs": [
+        "D:\\D\\figures\\data_overview\\图3_DEM地形及调度中心与服务区分布.pdf",
+        "D:\\D\\figures\\data_overview\\图3_DEM地形及调度中心与服务区分布.svg",
+        "D:\\D\\figures\\data_overview\\图3_DEM地形及调度中心与服务区分布.png",
+        "D:\\D\\figures\\data_overview\\图3_DEM地形及调度中心与服务区分布_grayscale.png"
+      ],
+      "core_claim": "调度中心O01与15个服务区均位于DEM覆盖范围内，地形高差显著。",
+      "evidence": "30米DEM与调度中心、服务区经纬度。",
+      "chart": "连续terrain色带DEM地图，叠加等高线、调度中心与服务区标记。"
+    }
+  ]
+}

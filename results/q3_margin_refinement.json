@@ -1,0 +1,8 @@
+{
+  "status": "FAIL",
+  "minimum_margin_db": 1.0,
+  "target_sample_count": 1441,
+  "tested_candidate_count": 1089,
+  "retained_candidate_count": 0,
+  "best_candidates": []
+}

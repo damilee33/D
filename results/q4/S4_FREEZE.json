@@ -1,0 +1,43 @@
+{
+  "status": "FROZEN_PASS",
+  "solution_version": "S4-v1.0.0-provisional_v0",
+  "parent_version": "S3-v1.0.0-provisional_v0",
+  "frozen_at_utc": "2026-09-24T18:32:56.4712566Z",
+  "independent_audit": {
+    "status": "PASS",
+    "p0_count": 0,
+    "p1_count": 0,
+    "q4_regression_tests_passed": 4,
+    "full_tests_passed": 64,
+    "candidate_rows_replayed": 121,
+    "s3_hashes_verified": 13
+  },
+  "metrics": {
+    "must_link_component_count": 6,
+    "k2_candidate_count": 31,
+    "k3_candidate_count": 90,
+    "total_mass_kg": 758.0,
+    "transport_work_seconds": 41607.0316917481,
+    "relay_work_seconds": 21376.88541180134,
+    "joint_energy_kwh": 73.89636317179198,
+    "k2_shortage_vector": [0, 0, 1, 0, 0, 0, 0, 0],
+    "k3_shortage_vector": [0, 0, 2, 0, 0, 1, 1, 0],
+    "final_workbook_sheet_row_counts": [18, 23, 80, 6, 199, 5]
+  },
+  "sha256": {
+    "results/q4/q4_summary.json": "c1bef9ed29bf073f0be9ac93fa77f9d363f1cdb2df4655b0278577ea3797d1eb",
+    "results/q4/must_link_components.csv": "92eb79e24320d1cb4bf5ac9d038d050a035e32889b86e405b5e0fa6428a4c19c",
+    "results/q4/partition_candidates.csv": "486476ec25d4b140a0a6e99f6190f452f35e73490172485559ab299a2656df8f",
+    "results/q4/selected_partition.csv": "c1d2a782b323ffa2cebbef0f8b4bf679cfada3732ade97590c684cd5ccf3293c",
+    "results/q4/Q4结果说明.md": "b4f4bff8bdab006a620a34ea1bd448ce618bb947505b384452295796c9729919",
+    "src/dproblem/q4/partition.py": "ecab4917083c7fb8e57ff06a849bc4feb758c980d7f254398da388d25efc9985",
+    "scripts/run_q4.py": "2c022a1698d95790c5630e9fc6fea13984ee375952181e2c1275fc8aeef8c0c2",
+    "scripts/build_final_submission.py": "9d30be1fb7dd582a8b2d27675d53cf863898abbd1751b31e932e083412236d69",
+    "tests/regression/test_q4_results.py": "3c2402a29b27f597d48caedcc9213fd11697d3468f49bf8172c9649ecb034a91",
+    "tests/regression/test_final_submission.py": "7793fa747643dc75b0f317aee11f6ecb2fac96f2f8827bd35b0690cf15c610ed",
+    "results/结果提交_Q1-Q4.xlsx": "ae1bb727975b35dbdc613326b80abec92c6cdca900fc43b580a95b335bb4708f",
+    "题目分析报告.md": "489ca3edea520b9d71400f7397c995cacb2d07cce46d2f3abc5fffe3e280db2a",
+    "config/model.json": "755b983e9156789839ee85c34b3d996aafb34e7473f036bebb68daee87d01f5a"
+  },
+  "invalidation_rule": "Any official energy-definition update invalidates S1-S4 and requires rerunning Q1-Q4. Any change to a hashed S4 artifact invalidates this freeze and requires a full Q4 and workbook audit."
+}

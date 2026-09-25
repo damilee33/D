@@ -1,0 +1,72 @@
+{
+  "status": "PASS",
+  "solution_version": "S3-v1.0.0-provisional_v0",
+  "parent_version": "S2-v1.1.0-provisional_v0",
+  "energy_model_version": "provisional_v0",
+  "transport_trip_shifts_seconds": {
+    "Q2-005": 980.0,
+    "Q2-006": 5474.388058583308,
+    "Q2-008": 400.0,
+    "Q2-009": 2202.629303887711,
+    "Q2-011": 5900.0,
+    "Q2-013": 800.0,
+    "Q2-014": 980.0,
+    "Q2-015": 700.0,
+    "Q2-016": -3772.056700388106,
+    "Q2-017": 2262.629303887711,
+    "Q2-018": 980.0,
+    "Q2-019": 3179.887279322106,
+    "Q2-020": -1190.8995031364677,
+    "Q2-021": -1190.8995031364677,
+    "Q2-023": 700.0
+  },
+  "cargo_swap": {
+    "S002-WAT-01": "Q2-007",
+    "S002-WAT-03": "Q2-006"
+  },
+  "transport_metrics": {
+    "timeliness_loss_weighted_seconds": 192765.1211020861,
+    "makespan_seconds": 11232.225778564598,
+    "energy_kwh": 67.4414221399822,
+    "trip_count": 23,
+    "minimum_hard_deadline_margin_seconds": 26.62962309913337
+  },
+  "relay_metrics": {
+    "makespan_seconds": 11306.688366450433,
+    "energy_kwh": 6.454941031809778,
+    "sortie_count": 6,
+    "drones_used": 2,
+    "modules_used": 6,
+    "minimum_return_soc_percent": 37.02647891223927
+  },
+  "joint_metrics": {
+    "makespan_seconds": 11306.688366450433,
+    "total_energy_kwh": 73.89636317179198,
+    "transport_and_relay_sorties": 29
+  },
+  "communication_audit": {
+    "status": "PASS",
+    "step_seconds": 1.0,
+    "sample_count": 32403,
+    "relay_sample_count": 12515,
+    "minimum_relay_access_margin_db": 1.000727401301134,
+    "minimum_relay_backhaul_margin_db": 2.3188641332927773,
+    "minimum_adopted_relay_link_margin_db": 1.000727401301134,
+    "minimum_adopted_direct_margin_db": 0.0017037377730275693,
+    "minimum_margin_evidence": {
+      "trip_id": "Q2-008",
+      "time_seconds": 3333.3703769008666,
+      "phase": "handover",
+      "relay_sortie_id": "RLY-003",
+      "candidate_id": "C033-H300",
+      "margin_db": 1.000727401301134
+    },
+    "violations": 0
+  },
+  "constraint_audit": {
+    "status": "PASS",
+    "transport_violations": 0,
+    "relay_violations": 0,
+    "communication_violations": 0
+  }
+}

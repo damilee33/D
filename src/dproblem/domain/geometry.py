@@ -53,6 +53,19 @@ class RasterDEM:
             and -tolerance <= col <= self.width + tolerance
         )
 
+    def elevation_at_cell(self, lon, lat):
+        """Return the recorded elevation of the containing DEM cell."""
+
+        if not self.contains(lon, lat):
+            raise ValueError("point lies outside DEM")
+        row, col = self.fractional_cell(lon, lat)
+        row_index = min(self.height - 1, max(0, int(floor(row))))
+        col_index = min(self.width - 1, max(0, int(floor(col))))
+        value = float(self.values[row_index, col_index])
+        if self.nodata is not None and value == self.nodata:
+            raise ValueError("point lies in a DEM nodata cell")
+        return value
+
     def line_cells(self, lon1, lat1, lon2, lat2):
         """Return a conservative supercover of every grid cell touched by a segment."""
         row1, col1 = self.fractional_cell(lon1, lat1)

@@ -1,0 +1,48 @@
+{
+  "status": "FROZEN_PASS",
+  "solution_version": "S3-v1.0.0-provisional_v0",
+  "parent_version": "S2-v1.1.0-provisional_v0",
+  "frozen_at_utc": "2026-09-24T18:18:59.2179141Z",
+  "independent_audit": {
+    "status": "PASS",
+    "p0_count": 0,
+    "p1_count": 0,
+    "target_tests_passed": 12,
+    "communication_step_seconds": 1.0,
+    "adopted_direct_samples": 19888,
+    "relay_samples": 12515
+  },
+  "metrics": {
+    "transport_trip_count": 23,
+    "relay_sortie_count": 6,
+    "transport_energy_kwh": 67.4414221399822,
+    "relay_energy_kwh": 6.454941031809778,
+    "joint_energy_kwh": 73.89636317179198,
+    "joint_makespan_seconds": 11306.688366450433,
+    "minimum_hard_deadline_margin_seconds": 26.62962309913337,
+    "minimum_relay_return_soc_percent": 37.02647891223927,
+    "minimum_adopted_direct_margin_db": 0.0017037377730275693,
+    "minimum_adopted_relay_access_margin_db": 1.000727401301134,
+    "minimum_adopted_relay_backhaul_margin_db": 2.3188641332927773,
+    "communication_violations": 0,
+    "cargo_boxes_exactly_once": 80,
+    "relay_drones_used": 2,
+    "relay_modules_used": 6
+  },
+  "sha256": {
+    "results/q3/q3_summary.json": "11166994e8dc07989342aebcaaf94a951b8172f1bbb896c01b6c5b7c97b7f84d",
+    "results/q3/transport_trips.csv": "30e275d673590f147a7dd853b70a61ab9dabf8630c36157d0673bbfc435b78ef",
+    "results/q3/transport_box_deliveries.csv": "eb1151b6728ebe2b6b946de7a98288dee06ce4ca4d2e899d1de3b0cb41656232",
+    "results/q3/transport_segments.csv": "8cbf22fa4478304a7a833a913baead1efc129f5b992df3cd23cafe182f1898cd",
+    "results/q3/transport_timeline.csv": "cf66a395ad7abd0115275345da68dfd203e67d118e2c745c06b1eda19227718e",
+    "results/q3/transport_battery_timeline.csv": "7d97ef6662c34f18d30e368f9c7afb4c6b832ab711eae7a6a550031283906e0b",
+    "results/q3/relay_sorties.csv": "1496c197ee9c3d711e8241c22e94218f34ad2a2daa9c0fc78e59dd4f4402bf66",
+    "results/q3/communication_guarantee.csv": "a749a34f53878019e1f688beed7ce3a1589ffbfa5fad245189f58c8e7214f329",
+    "results/q3/relay_path_plan.json": "040545a97043f034829f6cbebc910df13a76898f5fb7b56f948c3066d85555e5",
+    "results/q3/Q3结果说明.md": "59847d30bf2b9768b5d9606199b42d8dda251d6de6682f5066e4255782a47c92",
+    "src/dproblem/q3/joint.py": "69fe3fca59f4e819da69804be77df4039dac1bd61b54cc96434f4741cfae7a4e",
+    "题目分析报告.md": "489ca3edea520b9d71400f7397c995cacb2d07cce46d2f3abc5fffe3e280db2a",
+    "config/model.json": "755b983e9156789839ee85c34b3d996aafb34e7473f036bebb68daee87d01f5a"
+  },
+  "invalidation_rule": "Any official energy-definition update invalidates S1-S3 and requires rerunning Q1-Q4. Any change to a hashed S3 artifact invalidates this freeze and requires a full Q3 audit before Q4 reads it."
+}

@@ -82,7 +82,7 @@ def raw_resource_inventory(project_root, figures_dir):
     drone_counts = Counter(row["机型编号"] for row in data["transport"]["drones"])
     battery_counts = {row["机型编号"]: row["共享电池组总数（组）"] for row in data["transport"]["batteries"]}
     type_rows = {row["机型编号"]: row for row in data["transport"]["types"]}
-    fig, axes = plt.subplots(1, 2, figsize=(7.2, 3.4), constrained_layout=True)
+    fig, axes = plt.subplots(1, 3, figsize=(8.4, 3.4), constrained_layout=True)
     x = np.arange(3)
     axes[0].bar(x - 0.18, [drone_counts[t] for t in types], 0.36, color=OKABE[0], label="实体无人机")
     axes[0].bar(x + 0.18, [battery_counts[t] for t in types], 0.36, color=OKABE[1], hatch="//", edgecolor="white", label="共享电池组")
@@ -90,20 +90,18 @@ def raw_resource_inventory(project_root, figures_dir):
     axes[0].set_ylabel("资源数量")
     axes[0].set_title("实体资源库存")
     axes[0].legend(frameon=False)
-    axes[1].bar(x - 0.18, [type_rows[t]["最大载货质量（kg）"] for t in types], 0.36, color=OKABE[2], label="载重 kg")
-    energy_axis = axes[1].twinx()
-    energy_axis.bar(x + 0.18, [type_rows[t]["电池可用能量（kWh）"] for t in types], 0.36, color=OKABE[3], hatch="..", edgecolor="white", label="电量 kWh")
+    axes[1].bar(x, [type_rows[t]["最大载货质量（kg）"] for t in types], 0.52, color=OKABE[2])
     axes[1].set_xticks(x, ["A型", "B型", "C型"])
     axes[1].set_ylabel("最大载货质量（kg）")
-    energy_axis.set_ylabel("单组可用能量（kWh）")
-    axes[1].set_title("机型能力")
-    handles1, labels1 = axes[1].get_legend_handles_labels()
-    handles2, labels2 = energy_axis.get_legend_handles_labels()
-    axes[1].legend(handles1 + handles2, labels1 + labels2, frameon=False, loc="upper left")
-    for ax, panel in zip(axes, "ab"):
+    axes[1].set_title("载重能力")
+    axes[2].bar(x, [type_rows[t]["电池可用能量（kWh）"] for t in types], 0.52, color=OKABE[3], hatch="..", edgecolor="white")
+    axes[2].set_xticks(x, ["A型", "B型", "C型"])
+    axes[2].set_ylabel("单组可用能量（kWh）")
+    axes[2].set_title("电池能量")
+    for ax, panel in zip(axes, "abc"):
         ax.grid(axis="y", alpha=0.2, linewidth=0.5)
         ax.text(-0.16, 1.03, panel, transform=ax.transAxes, fontweight="bold", fontsize=9)
-    return export_with_qa(fig, figures_dir / "raw_q2_resource_inventory", (7.2, 3.4))
+    return export_with_qa(fig, figures_dir / "raw_q2_resource_inventory", (8.4, 3.4))
 
 
 def process_baseline_deadline(project_root, figures_dir):
@@ -194,7 +192,7 @@ def result_drone_gantt(project_root, figures_dir):
     handles = [plt.Rectangle((0, 0), 1, 1, color=colors[t]) for t in ("A", "B", "C")]
     ax.legend(
         handles, ["A型", "B型", "C型"], frameon=False, ncol=3,
-        loc="lower center", bbox_to_anchor=(0.5, 1.01),
+        loc="upper right",
     )
     ax.grid(axis="x", alpha=0.2, linewidth=0.5)
     return export_with_qa(fig, figures_dir / "result_q2_drone_gantt", (7.2, 4.2))
@@ -218,7 +216,7 @@ def result_battery_timeline(project_root, figures_dir):
     handles = [plt.Rectangle((0, 0), 1, 1, color=OKABE[0]), plt.Rectangle((0, 0), 1, 1, color="#BBBBBB", hatch="//")]
     ax.legend(
         handles, ["执行任务", "充至100%"], frameon=False, ncol=2,
-        loc="lower center", bbox_to_anchor=(0.5, 1.01),
+        loc="upper right",
     )
     ax.grid(axis="x", alpha=0.2, linewidth=0.5)
     return export_with_qa(fig, figures_dir / "result_q2_battery_timeline", (7.2, 5.0))
@@ -226,27 +224,36 @@ def result_battery_timeline(project_root, figures_dir):
 
 def result_delivery_deadlines(project_root, figures_dir):
     rows = read_csv(project_root / "results" / "q2" / "main_box_deliveries.csv")
-    services = sorted({row["服务区编号"] for row in rows})
-    first = []
-    last = []
-    hard = []
-    for service in services:
-        selected = [row for row in rows if row["服务区编号"] == service]
-        first.append(min(float(row["交付完成时刻（s）"]) for row in selected) / 3600)
-        last.append(max(float(row["交付完成时刻（s）"]) for row in selected) / 3600)
-        hard.append(min(float(row["硬截止时间（s）"]) for row in selected if row["硬截止时间（s）"]) / 3600)
-    y = np.arange(len(services))
+    hard_rows = [row for row in rows if row["硬截止时间（s）"]]
+    delivery = np.array([float(row["交付完成时刻（s）"]) / 3600 for row in hard_rows])
+    deadline = np.array([float(row["硬截止时间（s）"]) / 3600 for row in hard_rows])
+    slack = deadline - delivery
+    slack_cmap = plt.get_cmap("viridis", 5)
+    slack_span = max(slack.max() - slack.min(), 1e-6)
+    slack_boundaries = np.linspace(
+        max(0.0, slack.min() - 0.02 * slack_span),
+        slack.max() + 0.02 * slack_span,
+        6,
+    )
+    slack_norm = BoundaryNorm(slack_boundaries, slack_cmap.N, clip=True)
     fig, ax = plt.subplots(figsize=(6.6, 5.0), constrained_layout=True)
-    ax.hlines(y, first, last, color="#AAAAAA", linewidth=4, label="首箱至末箱")
-    ax.scatter(first, y, color=OKABE[0], marker="o", label="首箱交付")
-    ax.scatter(last, y, color=OKABE[2], marker="s", label="末箱交付")
-    ax.scatter(hard, y, color=OKABE[4], marker="|", s=120, linewidth=1.5, label="最早硬截止")
-    ax.set_yticks(y, services)
-    ax.set_xlabel("任务开始后的时间（h）")
-    ax.set_ylabel("服务区")
-    ax.set_title("S2 逐服务区交付窗口与硬截止")
-    ax.legend(frameon=False, ncol=2, loc="lower right")
-    ax.grid(axis="x", alpha=0.2, linewidth=0.5)
+    scatter = ax.scatter(
+        deadline, delivery, c=slack, cmap=slack_cmap, norm=slack_norm,
+        s=38, edgecolor="white", linewidth=0.45,
+    )
+    limit = max(deadline.max(), delivery.max()) * 1.06
+    ax.plot([0, limit], [0, limit], linestyle="--", color="#333333", linewidth=0.8, label="交付=截止")
+    colorbar = fig.colorbar(
+        scatter, ax=ax, shrink=0.88, boundaries=slack_boundaries
+    )
+    colorbar.set_label("硬截止裕量（h）")
+    ax.set_xlim(0, limit)
+    ax.set_ylim(0, limit)
+    ax.set_xlabel("硬截止（h）")
+    ax.set_ylabel("交付完成（h）")
+    ax.set_title("S2 全部硬约束货箱的交付—截止核验")
+    ax.legend(frameon=False, loc="upper left")
+    ax.grid(alpha=0.2, linewidth=0.5)
     return export_with_qa(fig, figures_dir / "result_q2_delivery_deadlines", (6.6, 5.0))
 
 
